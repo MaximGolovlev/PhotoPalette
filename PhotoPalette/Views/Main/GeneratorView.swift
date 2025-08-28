@@ -101,6 +101,6 @@ struct GeneratorView: View {
                 Text("Are you sure you want to leave? The current image and color analysis will be lost.")
             }
         }
-        .environmentObject(viewModel)
+        .smartDismissKeyboard()
     }
 }

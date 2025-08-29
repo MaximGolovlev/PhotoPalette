@@ -14,15 +14,17 @@ struct TabBarView: View {
     
     var body: some View {
         TabView {
-            Tab("Generate", systemImage: "photo") {
-                GeneratorView()
-                    .environmentObject(appState.paletteGeneratorVM)
-            }
-            
-            Tab("History", systemImage: "clock") {
-                HistoryView()
-                    .environmentObject(appState.historyVM)
-            }
+            GeneratorView()
+                .tabItem {
+                    Label("Generate", systemImage: "photo")
+                }
+                .environmentObject(appState.paletteGeneratorVM)
+
+            HistoryView()
+                .tabItem {
+                    Label("History", systemImage: "clock")
+                }
+                .environmentObject(appState.historyVM)
         }
         .preferredColorScheme(.dark)
     }
